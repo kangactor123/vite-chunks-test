@@ -1,3 +1,7 @@
+import React, { Suspense } from "react";
+
+const ComponentOne = React.lazy(() => import("./component-one"));
+
 function App() {
   return (
     <div>
@@ -9,6 +13,9 @@ function App() {
       >
         hello world
       </button>
+      <Suspense fallback={<div>Loading...</div>}>
+        <ComponentOne />
+      </Suspense>
     </div>
   );
 }
