@@ -10,10 +10,26 @@ jobs:
     steps:
       - name: Checkout source code
         uses: actions/checkout@v2
+
+      # pnpm 설치
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 10 # 사용하는 pnpm 버전 지정 (원하는 버전으로 변경)
+
+      # Node.js 설치 (pnpm은 Node.js 필요)
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "pnpm"
+
       - name: Install dependencies
         run: pnpm install
+
       - name: Build
         run: pnpm build
+
       - name: S3 Deploy
         run: aws s3 sync ./dist s3://vite-chunks-test/ --acl bucket-owner-full-control --delete
         env:
