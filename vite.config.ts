@@ -17,6 +17,13 @@ export default defineConfig({
           }
           return null;
         },
+        // chunkFileNames: (info) => {
+        //   const isVendor = info.name?.startsWith("vendor");
+        //   const directory = "assets/[name]";
+        //   const extensionName = ".js";
+        //   const fileName = !isVendor ? "[hash]" : "";
+        //   return `${directory}${fileName}${extensionName}`;
+        // },
       },
     },
   },
