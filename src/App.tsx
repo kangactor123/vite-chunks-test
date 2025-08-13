@@ -7,7 +7,7 @@ function App() {
           alert("hello world!!");
         }}
       >
-        click here!!
+        hello world
       </button>
     </div>
   );
