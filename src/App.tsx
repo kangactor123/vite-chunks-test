@@ -2,7 +2,13 @@ function App() {
   return (
     <div>
       hello boy
-      <button>click here!!</button>
+      <button
+        onClick={() => {
+          alert("hello world!!");
+        }}
+      >
+        click here!!
+      </button>
     </div>
   );
 }
