@@ -2,7 +2,13 @@ const ComponentOne = () => {
   return (
     <div>
       ComponentOne
-      <button onClick={() => {}}>click com1</button>
+      <button
+        onClick={() => {
+          alert("ComponentOne clicked!");
+        }}
+      >
+        click com1
+      </button>
     </div>
   );
 };
