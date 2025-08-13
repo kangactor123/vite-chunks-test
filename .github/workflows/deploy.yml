@@ -15,7 +15,7 @@ jobs:
       - name: Build
         run: yarn build
       - name: S3 Deploy
-        run: aws s3 sync ./dist s3://{버킷 이름을 넣어주세요}/ --acl bucket-owner-full-control
+        run: aws s3 sync ./dist s3://s3-upload/ --acl bucket-owner-full-control
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
