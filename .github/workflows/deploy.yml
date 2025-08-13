@@ -11,9 +11,9 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v2
       - name: Install dependencies
-        run: yarn install
+        run: pnpm install
       - name: Build
-        run: yarn build
+        run: pnpm build
       - name: S3 Deploy
         run: aws s3 sync ./dist s3://vite-chunks-test/ --acl bucket-owner-full-control
         env:
